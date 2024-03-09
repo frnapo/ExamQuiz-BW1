@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Quiz</title>
+  </head>
+  <body>
+    <div class="logoDiv">
+    <a href="https://epicode.com/it/"><img
+      id="Logo"
+      src="./assets/img/epicode_logo.png"
+      alt="Logo epicode_logo"
+    /></a>
+  </div>
+    <header>
+      <h1 class="title"><span>Welcome to</span><br />your exam</h1>
+    </header>
+    <main>
+      <p id="istruzioni">Instructions</p>
+      <p>
+        We dont't expect most engineers to know the answer to all of these <br>
+        questions, so don't worry if you're unsure of a few of them
+      </p>
+      <ul>
+        <li>
+          Each question is <b>timed</b> and can only be <b>answered once.</b>
+        </li>
+        <li>
+          Changing browser tab or opening other windows will
+          <b>invalidate the question.</b>
+        </li>
+        <li>This exam will take approx. <b>0-5 minutes.</b></li>
+      </ul>
+<!-- Qui abbiamo creato un menu a scomparsa che ci permette di selezionare quale questionario vogliamo effettuare -->
+      <div class="dropdown">
+        <button class="dropbtn">Select Difficulty</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="mostraBottone('button')">EASY</a>
+            <a href="#" onclick="mostraBottone('button2')">HARD</a>
+        </div>
+    </div>
+<!-- Qui abbiamo aggiunto una checkbox che manda un alert e non permette di proseguire se non viene checkata -->
+      <form action="">
+        <div id="check">
+          <input type="checkbox" id="checkbox_input" required /><label for="checkbox_input"></label><b>I promise to answer myself without help from anyone</label>
+        </div>
+        <div>
+          <a href="./questionario.html"><button id="button" style="display: none;" type="submit">Easy Test</button></a>
+          <a href="./questionario2.html"><button id="button2" style="display: none;" type="submit">Hard Test</button></a>
+        </div>
+      </form>
+    </main>
+    <script>
+      // Funzioni che portano alle domande e controllano le checkbox
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("button").addEventListener("click", function (event) {
+          event.preventDefault();
+          const checkbox = document.getElementById("checkbox_input");
+          if (!checkbox.checked) {
+            alert("Make sure the checkbox is selected");
+          } else {
+            window.location.href = "./questionario.html";
+          }
+        });
+      });
+
+    // stessa funzione per il secondo quiz 
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("button2").addEventListener("click", function (event) {
+          event.preventDefault();
+          const checkbox = document.getElementById("checkbox_input");
+          if (!checkbox.checked) {
+            alert("Make sure the checkbox is selected");
+          } else {
+            window.location.href = "./questionario2.html";
+          }
+        });
+      });
+      var bottoneAttuale = null;
+      
+// questa e' una funzione che nasconde i bottoni per i test e ne fa apparire a schermo solo uno per volta
+function mostraBottone(idBottone) {
+    if (bottoneAttuale) {
+        document.getElementById(bottoneAttuale).style.display = 'none';
+    }
+    document.getElementById(idBottone).style.display = 'block';
+
+    bottoneAttuale = idBottone;
+}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pagina vuota</title>
+  </head>
+  <body id="quizPage">
+    <div class="logo-timer-container">
+      <img
+        id="Logo"
+        src="./assets/img/epicode_logo.png"
+        alt="Logo epicode_logo"
+      />
+      <div class="circle-container">
+        <div id="timer" class="timer">
+          <svg width="200" height="200">
+            <circle
+              id="progress-circle"
+              class="progress-circle"
+              fill="transparent"
+              stroke="#00FFFF"
+              stroke-width="13"
+              r="70"
+              cx="100"
+              cy="100"
+            />
+            <text
+              id="timerText"
+              x="50%"
+              y="50%"
+              text-anchor="middle"
+              dy="0.3em"
+              font-size="50"
+              font-weight="bold"
+              font-family="Outfit, sans-serif"
+            >
+              60
+            </text>
+            <text
+              id="timerText"
+              x="50%"
+              y="33%"
+              text-anchor="middle"
+              dy="0.3em"
+              font-size="11"
+              fill="rgba(255, 255, 255, 0.9)"
+              font-family="Outfit, sans-serif"
+            >
+              SECONDS
+            </text>
+            <text
+              id="timerText"
+              x="50%"
+              y="65%"
+              text-anchor="middle"
+              dy="0.3em"
+              font-size="11"
+              fill="rgba(255, 255, 255, 0.5)"
+              font-family="Outfit, sans-serif"
+            >
+              REMAINING
+            </text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div id="container"></div>
+    <div id="feedbackContainer"></div>
+    <div id="questionCounter"></div>
+    <script src="./assets/js/quiz2.js"></script>
+  </body>
+</html>

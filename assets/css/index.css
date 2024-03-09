@@ -1,0 +1,419 @@
+/*+++++++++++++++++ IMPOSTAZIONI GENERALI ++++++++++++++++++++++*/
+
+body {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  margin: 0 8rem 5rem 8rem;
+  background: rgb(12,17,59);
+  background: linear-gradient(306deg, rgba(12,17,59,1) 8%, rgba(96,35,101,1) 14%, rgba(96,35,101,1) 20%, rgba(69,30,88,1) 23%, rgba(96,35,101,1) 25%, rgba(96,35,101,1) 31%, rgba(69,30,88,1) 33%, rgba(96,35,101,1) 36%, rgba(96,35,101,1) 42%, rgba(69,30,88,1) 45%, rgba(24,20,65,1) 48%);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size:60px;
+}
+
+#container {
+  text-align: center;
+  margin: 0 10%;
+ }
+
+/*++++++++++++++++ HEADER +++++++++++++++++++++++*/
+.title {
+  font-size: 6em; 
+  line-height: 80%;
+  font-family: "Outfit", sans-serif;
+  margin-bottom: 2.8rem;
+  
+}
+h1 span {
+  font-weight: lighter;
+}
+
+.logoDiv {
+  margin-bottom: 5rem;
+}
+
+#Logo {
+  width: 13%;
+  margin-top: 4rem;
+  min-width: 10rem;
+  height: 5%;
+}
+#istruzioni {
+  color: #d20094;
+  font-size:2rem; 
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.logo-timer-container {
+  display: flex;
+  justify-content: space-between;
+}
+#timerText {
+  fill: white;
+}
+/*+++++++++++++++++ LISTA ++++++++++++++++++++++*/
+ul {
+  margin-top: 2.5rem;
+  margin-left: -1rem;
+  margin-bottom: 4rem;
+}
+
+li {
+  line-height: 1.8rem;
+}
+
+/*+++++++++++++++++ BOTTONI ++++++++++++++++++++++*/
+
+.dropbtn {
+  box-shadow: 0px 1px 11px 4px #d20094;
+  background: linear-gradient(to bottom, #d20094 5%, #d20094 100%);
+  background-color: #d20094;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  width: 14rem;
+  height: 3.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+}
+
+#button, #button2 {
+  box-shadow: 0px 1px 11px 4px #00ffff;
+  background: linear-gradient(to bottom, #00ffff 5%, #00ffff 100%);
+  background-color: #00ffff;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  width: 14rem;
+  height: 3.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+
+}
+#button:hover, #button2:hover{
+  background: linear-gradient(
+    0deg,
+    rgb(0, 197, 204) 0%,
+    rgb(47, 179, 255) 100%
+  );
+  color: white;
+}
+#button:active, #button2:active {
+  position: relative;
+  top: 1px;
+}
+
+#multiplo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stileBottoni {
+  width: 20rem;
+  height: 4rem;
+  border-radius: 30px;
+  margin: 1em;
+  background-color: rgba(255, 255, 255, 0.13);
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  border-color: white;
+  border: none;
+  -webkit-box-shadow: 0px -2px 1px 1px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px -2px 1px 1px rgba(255, 255, 255, 1);
+  box-shadow: 0px -2px 1px 1px rgba(255, 255, 255, 1);
+  cursor: pointer;
+  font-size: 1rem; /* Changed from 1em */
+}
+.stileBottoni:hover {
+  background: rgb(119, 1, 93);
+  background: linear-gradient(
+    0deg,
+    rgba(119, 1, 93, 1) 0%,
+    rgba(210, 0, 148, 1) 100%
+  );
+  border: 2px solid rgba(210, 0, 148, 1);
+  color: white;
+}
+
+
+/*+++++++++++++++++++ DOMANDE +++++++++++++++++++++*/
+.stilep {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+.numeroColorato {
+  color: #d20094;
+}
+#questionCounter {
+  font-size: 2rem; 
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+/*+++++++++++++ FOOTER +++++++++++++++*/
+form {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*+++++++++++++++CHECKBOX +++++++++++++*/
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+label:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2.5px solid white;
+  vertical-align: middle;
+  margin-right: 1em;
+  margin-bottom: 0.2em;
+}
+
+input[type="checkbox"]:checked + label:before {
+  content: "\2713"; /* unicode per la v di checked*/
+  text-align: center;
+  line-height: 15px;
+  color: white;
+}
+
+/*+++++++++++++++++ RESULTS ++++++++++++++++++++++*/
+
+#rateUs {
+  box-shadow: 2px 1px 11px 6px #0015ff36;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid white;
+  width: 16.5rem;
+  height: 4.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 3em;
+  margin-left: 1.8rem;
+}
+
+#rateUs:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.diGravita{
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#resultsContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.results {
+  font-size: 3.5rem; 
+}
+ #correct {
+  text-align: left;
+ }
+ #wrong {
+  text-align: right;
+ }
+p.diGravita {
+  font-size: 2rem;
+  margin-top: 5px;
+}
+
+h1.diGravita {
+  margin-bottom:0.8rem;
+}
+
+
+/*+++++++++++++++++ FEEDBACK ++++++++++++++++++++++*/
+
+/* stili generali feedback */
+
+#formFeedback {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feedbackH1, .feedbackP {
+  text-align: center;
+}
+
+.feedbackH1 {
+  margin-top:5rem;
+}
+
+.feedbackP {
+  font-size: 2rem; /* Changed from 30px to 2rem */
+  margin-bottom: 30px;
+}
+#star-container {
+  margin-bottom: 3rem;
+}
+
+#star-container .star {
+  margin-right: 0.6rem;
+  cursor: pointer;
+}
+
+/* riempio anche le stelle che precedono quella su cui faccio l'hover -> si ricollega al forEach dello script di feedback.html */
+
+.star.hovered path {
+  fill: #00ffff;
+}
+
+/*  stile input feedback */
+
+.feedbackInput {
+  width: 70%;
+  border: none;
+  border-bottom: 2px solid #9c29c2;
+  background: transparent;
+  color: #5f606e;
+  margin-top:0.5rem;
+  margin-bottom: 2.5rem;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* stile placeholder dell'input feedback  e del text che scriviamo dentro */
+
+
+.feedbackInput::placeholder{
+font-size: 1.2rem;
+text-indent: 4.5%;
+}
+
+.feedbackInput[type="text"]{
+  text-indent: 4.5%;
+  color: #7b7c8f;
+  font-size: larger;
+}
+
+/* tolgo il bordo bianco intorno all'input feedback quando cliccato */
+
+.feedbackInput:focus {
+  outline: none; /
+}
+
+/* aggiungo margin bottom al bottone del feedback */
+
+.feedbackBtn{
+  margin-bottom:6rem;
+}
+
+/* Animazione del cerchio */
+.circle-container {
+  position: relative;
+}
+
+.progress-circle {
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transform: rotate(-90deg); /* Aggiunto per far partire l'animazione da 0° */
+  transform-origin: 50% 50%; /* Aggiunto per far partire l'animazione dal centro del cerchio */
+  transition: stroke-dashoffset 1s linear;
+}
+.correct-feedback {
+  color: green;
+}
+
+.wrong-feedback {
+  color: red;
+}
+
+#feedbackContainer{
+  text-align: center;
+  margin-top: 2em;
+}
+
+/*  +++++++++++ CERCHIO PERCENTUALI RESULTS +++++++++++ */
+
+.piccolo{
+  color: rgba(255, 255, 255, 0.623);
+  font-size: 1rem;
+  margin-top:2rem;
+}
+.textBig{
+  font-size: 1.4rem;
+  margin: -0.5rem;
+  }
+#azzurro{
+  color: #00ffff;
+  line-height:normal;
+}
+#viola{
+  color: #d20094;
+  line-height: normal;
+}
+.domandeSuDieci {
+font-size: 1.4rem;
+}
+#wrong p, #correct p{
+  margin-bottom:-1.3rem;
+}
+
+/* +++++++++++++++++++++++ SEZIONE MENU' A TENDINA EASY / HARD +++++++++++++++++++++++ */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #d20094;
+  font-weight: bold;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Risultato</title>
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <body>
+    <a href="https://epicode.com/it/"><img
+      id="Logo"
+      src="./assets/img/epicode_logo.png"
+      alt="Logo epicode_logo"
+    /></a>
+    <h1 class="diGravita">Results</h1>
+    <p class="diGravita">The summary of your answers:</p>
+    <div id="resultsContainer">
+      <div id="correct" class="results"></div>
+      <div id="canvasContainer" style="position: relative">
+        <!-- Contenitore della torta -->
+        <canvas id="myChart" style="width: 100%; max-width: 800px"></canvas>
+        <div
+          id="centerText"
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: Inter, sans-serif;
+          "
+        ></div>
+      </div>
+      <div id="wrong" class="results"></div>
+    </div>
+    <div class="diGravita">
+      <a href="./feedback.html"
+        ><button id="rateUs" type="submit">RATE US</button></a
+      >
+    </div>
+    <script>
+      
+      var correctPercentage = localStorage.getItem("correctPercentage");
+      var wrongPercentage = localStorage.getItem("wrongPercentage");
+      var correctCount = localStorage.getItem("correctCount");
+      var wrongCount = localStorage.getItem("wrongCount");
+
+      var xValues = ["WRONG", "CORRECT"];
+      var yValues = [wrongCount, correctCount];
+      var barColors = ["#c2128d", "#00ffff"];
+
+      var ctx = document.getElementById("myChart").getContext("2d");
+      ctx.canvas.width = 400; // larghezza della torta!!
+      ctx.canvas.height = 400; // altezza della torta!!
+
+      // Qui creiamo la torta
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              backgroundColor: barColors,
+              data: yValues,
+              borderWidth: 0,
+            },
+          ],
+        },
+        options: {
+          cutoutPercentage: 70,
+          maintainAspectRatio: false,
+          responsive: true,
+          legend: {
+            display: false,
+          },
+        },
+      });
+      // Qui stampiamo le percentuali del test 
+      document.getElementById("wrong").innerHTML = `
+        <p>Wrong<br> <b>${wrongPercentage}%</b><br></p>
+        <span class="domandeSuDieci">${wrongCount}/10 questions</span>
+      `;
+      document.getElementById("correct").innerHTML = `
+        <p>Correct <br><b> ${correctPercentage}%</b><br></p>
+        <span class="domandeSuDieci">${correctCount}/10 questions</span>
+      `;
+
+      // Funzione per far comparire un messaggio diverso all'interno della torta in base alle risposte 
+      var centerText = document.getElementById("centerText");
+      centerText.innerHTML =
+        correctCount >= 6
+          ? `<b><p  class="textBig">Congratulations!<p>
+                                                  <p id="azzurro" class="textBig">You passed the exam.<p></b>
+                                                  <p class="piccolo"> We'll send you the certificate <br> in few minutes. <br> Check your email (including <br> promotions/spam folder)<p>`
+          : `
+                                                  <b><p  class="textBig">We're sorry!<p>
+                                                  <p id="viola"  class="textBig">You didn't pass the exam.<p></b>
+                                                  <p class="piccolo">Please get in touch <br> with your teacher to set  <br> a new exam date.<p>`;
+    </script>
+  </body>
+</html>
